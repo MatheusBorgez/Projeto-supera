@@ -10,3 +10,7 @@
 /WebAPI/WebAPI/appsettings.Development.json
 /WebAPI/WebAPI/appsettings.json
 /WebAPI/WebAPI/WebAPI.csproj.user
+/WebAPI/.vs/WebAPI/config
+/WebAPI/.vs/WebAPI/DesignTimeBuild
+/WebAPI/WebAPI/bin/Debug/net5.0/ref
+/WebAPI/WebAPI/bin/Debug/net5.0
