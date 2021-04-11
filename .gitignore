@@ -1,0 +1,12 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Projeto-supera/v16
+/.vs
+/WebAPI/.vs/WebAPI/v16
+/WebAPI/WebAPI/obj/Debug/net5.0
+/WebAPI/WebAPI/obj
+/WebAPI/WebAPI/appsettings.Development.json
+/WebAPI/WebAPI/appsettings.json
+/WebAPI/WebAPI/WebAPI.csproj.user
