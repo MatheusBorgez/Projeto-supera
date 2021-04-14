@@ -29,6 +29,7 @@ namespace WebAPI
         {
             services.AddMvc();
             services.AddSingleton<IRepositorioLogin, RepositorioLogin>();
+            services.AddSingleton<IRepositorioProdutos, RepositorioProdutos>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
