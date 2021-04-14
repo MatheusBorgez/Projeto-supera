@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WebAPI.Models;
 using WebAPI.Processos;
+using WebAPI.Repository;
 
 namespace WebAPI.Controllers
 {
@@ -9,10 +10,20 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class MenuController : ControllerBase
     {
-        [HttpPost]
-        public void ImportArquivo(string caminhoArquivo)
+
+        public IRepositorioProdutos _repositorioProdutos;
+
+        public MenuController(IRepositorioProdutos repositorioProdutos)
         {
-            var produtos = new ProcessoArquivos().ImporteProdutos(caminhoArquivo);
+            _repositorioProdutos = repositorioProdutos;
+        }
+
+        [HttpPost]
+        public IActionResult ImporteArquivo(string caminhoArquivo)
+        {
+            var response = new ProcessoArquivos().ImporteProdutos(caminhoArquivo);
+
+            return new ObjectResult(response);
         }
     }
 }

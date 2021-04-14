@@ -9,16 +9,6 @@ namespace WebAPI.Processos
 {
     public class ProcessoLogin
     {
-        public UsuarioModel AutentiqueUsuario(string usuario, string senhaInserida)
-        {
-            var usuarioRecuperado = new RepositorioLogin().ObtenhaUsuario(usuario);
 
-            if(usuarioRecuperado != null && usuarioRecuperado.Senha == senhaInserida)
-            {
-                return usuarioRecuperado;
-            }
-
-            return null;
-        }
     }
 }

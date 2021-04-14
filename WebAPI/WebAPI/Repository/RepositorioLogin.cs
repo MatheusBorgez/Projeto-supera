@@ -15,6 +15,18 @@ namespace WebAPI.Repository
             throw new NotImplementedException();
         }
 
+        public UsuarioModel AutentiqueUsuario(string usuario, string senhaInserida)
+        {
+            var usuarioRecuperado = ObtenhaUsuario(usuario);
+
+            if (usuarioRecuperado != null && usuarioRecuperado.Senha == senhaInserida)
+            {
+                return usuarioRecuperado;
+            }
+
+            return null;
+        }
+
         public UsuarioModel ObtenhaUsuario(string usuario)
         {
             using var cmd = DbHelper.DbConnection().CreateCommand();

@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebAPI.Models;
-using WebAPI.Processos;
 using WebAPI.Repository;
 
 namespace WebAPI.Controllers
@@ -24,14 +19,14 @@ namespace WebAPI.Controllers
         [HttpPost]
         public IActionResult AutentiqueUsuario([FromBody] UsuarioModel usuario)
         {
-            var reponse = new ProcessoLogin().AutentiqueUsuario(usuario.Username, usuario.Senha);
+            var response =_repositorioLogin.AutentiqueUsuario(usuario.Username, usuario.Senha);
 
-            if(reponse == null)
+            if(response == null)
             {
                 return NotFound(usuario);
             }
 
-            return new ObjectResult(reponse);
+            return new ObjectResult(response);
         }
     }
 }
